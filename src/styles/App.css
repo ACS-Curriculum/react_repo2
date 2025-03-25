@@ -1,0 +1,40 @@
+/* --- Root Container: Ensures Full-Screen Layout --- */
+#root {
+  min-height: 100vh; /* Ensures the root container spans the entire viewport height */
+  display: flex; /* Enables flexible box layout */
+  flex-direction: column; /* Stacks children (header, main, footer) vertically */
+  align-items: center; /* Centers content horizontally */
+}
+
+/* --- Full-Height Page Setup --- */
+body,
+html {
+  margin: 0; /* Removes default margins to prevent unwanted spacing */
+  padding: 0; /* Removes default padding */
+  width: 100vw; /* Ensures full viewport width */
+  min-height: 100vh; /* Ensures full viewport height */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  background-color: #1a1a1a; /* Sets a dark background color */
+  display: flex; /* Uses flexbox for proper layout alignment */
+  flex-direction: column; /* Stacks elements from top to bottom */
+}
+
+/* --- Main Content Area: Expands to Push Footer Down --- */
+main {
+  flex: 1; /* Allows main content to expand and push the footer to the bottom */
+  padding-top: 60px; /* Creates space below the fixed menu */
+  width: 100%; /* Ensures it spans the full width */
+  display: flex;
+  flex-direction: column; /* Maintains vertical stacking of child elements */
+}
+
+/* --- Footer: Always Stays at the Bottom --- */
+.footer {
+  width: 100%; /* Ensures full width */
+  height: 50px; /* Sets a fixed height */
+  background-color: #222; /* Dark background for contrast */
+  color: white; /* White text for readability */
+  text-align: center; /* Centers text horizontally */
+  line-height: 50px; /* Centers text vertically */
+  position: relative; /* Keeps footer positioned after main content */
+}

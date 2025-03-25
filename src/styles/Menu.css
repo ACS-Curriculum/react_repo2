@@ -1,0 +1,85 @@
+/* --- General Menu Styles --- */
+.menu {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.menu-item {
+  position: relative;
+}
+
+/* --- Menu Links --- */
+.menu-title {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-title:hover {
+  color: #ff0000;
+}
+
+/* --- Submenu Default State (Hidden) --- */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #999;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  min-width: 150px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* --- Show Submenu When Open --- */
+.menu-item .submenu.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- Nested Submenu Positioning (Submenus inside submenus) --- */
+.submenu .submenu {
+  top: 0;
+  left: 100%; /* Moves the second-level submenu to the right */
+}
+
+/* --- Submenu Items --- */
+.submenu-item {
+  position: relative;
+  padding: 8px 12px;
+}
+
+/* --- Submenu Links --- */
+.submenu-item a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.submenu-item a:hover {
+  color: #ff0000;
+}

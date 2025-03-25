@@ -1,0 +1,203 @@
+/* ==========================
+   Global Layout & Responsiveness
+   ========================== */
+
+/* --- Main Container for Code Pages --- */
+.code-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 95%;
+  min-width: 1200px; /* Ensures it never shrinks too much */
+  max-width: 1400px; /* Ensures it doesn’t get too large */
+  margin: auto;
+  gap: 40px;
+  flex-wrap: nowrap;
+  height: calc(100vh - 60px); /* Ensures full-page usage */
+}
+
+
+
+/* ==========================
+   Column Layouts
+   ========================== */
+
+/* --- Left Column: CodeBox (Main Coding Area) --- */
+.left-column {
+  flex: 1.5; /* Allocates more space to CodeBox */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 400px; /* Prevents shrinking too much */
+  width: 100%; /* Ensures full width when stacked */
+}
+
+/* --- Right Column: SketchBox + ExplanationBox --- */
+.right-column {
+  flex: 1; /* Keeps this column smaller than CodeBox */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adds spacing between SketchBox & ExplanationBox */
+  min-width: 300px; /* Prevents it from becoming too small */
+  width: 100%; /* Ensures full width when stacked */
+}
+
+/* ==========================
+   Home Page Layout
+   ========================== */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* --- Wrapper for Multiple Sketches --- */
+.sketch-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allows multiple sketches to wrap */
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* --- Individual Sketch Containers --- */
+.sketch-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #000; /* Matches dark mode theme */
+}
+
+/* ==========================
+   Content Boxes (Code & Explanation)
+   ========================== */
+
+/* --- Shared Box Styling for Scrollable Content --- */
+.code-box,
+.explanation-box {
+  width: 100%;
+  overflow-y: auto; /* Enables vertical scrolling when needed */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px auto; /* Centers elements */
+}
+
+/* --- CodeBox (Main Coding Area) --- */
+.code-box {
+  flex-grow: 1; /* Expands dynamically */
+  width: 100%;
+  max-width: 1000px; /* Allows wider space */
+  min-width: 600px; /* Prevents shrinking */
+  max-height: 950px; /* Limits height */
+  padding: 15px;
+  background-color: #000; /* Dark mode for code */
+  color: #fff; /* White text for contrast */
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* --- ExplanationBox (Text Area for Explanations) --- */
+.explanation-box {
+  width: 100%;
+  max-width: 450px; /* Keeps it smaller */
+  max-height: 400px; /* Fixed height */
+  background-color: #000;
+  border: 1px solid #ddd;
+  color: #fff;
+  padding: 10px;
+  text-align: left; /* Left-aligns body text */
+}
+h2{
+  margin: 0px;
+  padding: 0px;
+}
+/* --- Center Headings in ExplanationBox --- */
+.explanation-box h1, 
+.explanation-box h2, 
+.explanation-box h3 {
+  text-align: center;
+
+}
+
+/* --- SketchBox (Visual Output Area) --- */
+.sketch-box {
+  width: 100%;
+  max-width: 450px; /* Matches explanation box */
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #ddd;
+  margin: 10px auto; /* Centers the box */
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* ==========================
+   Footer
+   ========================== */
+
+.footer {
+  width: 100%;
+  height: 40px; /* Keeps the footer narrow */
+  background-color: #222; /* Dark background */
+  color: #fff; /* White text for contrast */
+  display: flex;
+  justify-content: center; /* Centers text horizontally */
+  align-items: center; /* Centers text vertically */
+  font-size: 14px; /* Keeps text readable */
+  position: relative; /* Stays at the bottom of content */
+  margin-top: 20px; /* Adds spacing from main content */
+}
+
+/* ==========================
+   Responsive Design: Tablets
+   ========================== */
+
+@media (max-width: 1024px) {
+  .code-container {
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .code-box {
+    width: 100%;
+    max-width: 90%;
+    min-width: unset;
+  }
+
+  .explanation-box,
+  .sketch-box {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* ==========================
+   Responsive Design: Mobile
+   ========================== */
+
+@media (max-width: 480px) {
+  .code-box,
+  .explanation-box,
+  .sketch-box {
+    width: 100%;
+    max-width: 100%; /* Full width on small screens */
+    margin: 5px auto; /* Reduces spacing */
+  }
+
+  .footer {
+    font-size: 12px; /* Slightly smaller text for mobile */
+    height: 35px; /* Reduces footer height */
+  }
+}
