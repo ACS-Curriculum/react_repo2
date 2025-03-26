@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import HeartsPage from "./pages/HeartsPage"; 
 import CodePage2 from "./pages/CodePage2"; 
@@ -10,7 +10,7 @@ import "./styles/App.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/react_repo2/">
       {/* Navigation Menu - Stays Fixed at the Top */}
       <Menu />
 
