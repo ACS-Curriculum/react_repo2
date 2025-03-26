@@ -2,12 +2,24 @@
   "name": "my-new-app",
   "private": true,
   "version": "0.0.0",
+<<<<<<< HEAD
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+=======
+  "type": "module", "homepage": "https://acs-curriculum.github.io/react_repo2/",
+
+  "scripts":{
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+      "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+>>>>>>> 3e55b07 (third)
   },
   "dependencies": {
     "node": "^20.19.0",
