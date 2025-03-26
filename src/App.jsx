@@ -10,7 +10,7 @@ import "./styles/App.css";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       {/* Navigation Menu - Stays Fixed at the Top */}
       <Menu />
 
@@ -29,7 +29,7 @@ function App() {
 
       {/* Footer - Stays at the Bottom */}
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 
